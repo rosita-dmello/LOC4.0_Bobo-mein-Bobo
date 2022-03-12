@@ -13,13 +13,20 @@ import { Grid } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 export default function Dashboard() {
-const style={
-  color:'#8080FF'
-}
+  const daily = {
+    color: '#8080FF',
+    margin: '0.4rem'
+  }
+
+  const bonus = {
+    color: '#8080FF',
+    margin: '0.4rem',
+    marginTop:'3rem'
+  }
   const days = [1, 2, 3, 4, 5]
   return (
-    <div style={{backgroudColor:'#1c2023'}}>
-      <h2 style={style}>Daily Exercises</h2>
+    <div style={{ backgroudColor: '#1c2023', padding: '2.5vw' }}>
+      <h2 style={daily}>Daily Exercises</h2>
       {/* <Card sx={{ display: 'flex' ,  width:'25%',  margin:'100px'}} className='card card1' >
        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
          <CardContent sx={{ flex: '1 0 auto' }}>
@@ -42,36 +49,70 @@ const style={
         spaceBetween={50}
         slidesPerView={4}
         navigation
-        onSlideChange={() => console.log('slide change')}
+        
       >
-          {
-            days.map((index) => {
-              return (
-                <SwiperSlide key={index}>
-                  {<Card sx={{ display: 'flex', width: '100%' }} className='card card1' >
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                      <CardContent sx={{ flex: '1 0 auto' }}>
-                        <Typography component="div" variant="h5">
-                          Day {index}
-                        </Typography>
-                        <Typography variant="subtitle1" color="text.secondary" component="div">
-                          Time required: 35 mins
-                        </Typography>
-                      </CardContent>
-                    </Box>
-                    <CardMedia
-                      component="img"
-                      sx={{ width: '151px', marginLeft: '20px' }}
-                      image={logo}
-                      alt="Live from space album cover"
-                    />
-                  </Card>}
-                </SwiperSlide>
-              )
-            })
-          }
+        {
+          days.map((index) => {
+            return (
+              <SwiperSlide key={index}>
+                {<Card sx={{ display: 'flex', width: '100%' }} className='card card1' >
+                  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '1 0 auto' }}>
+                      <Typography component="div" variant="h5">
+                        Day {index}
+                      </Typography>
+                      <Typography variant="subtitle1" color="text.secondary" component="div">
+                        Time required: 35 mins
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: '151px', marginLeft: '20px' }}
+                    image={logo}
+                    alt="Live from space album cover"
+                  />
+                </Card>}
+              </SwiperSlide>
+            )
+          })
+        }
       </Swiper>
 
+      <h2 style={bonus}>Bonus Exercises</h2>
+      <Swiper modules={[Navigation]}
+        spaceBetween={50}
+        slidesPerView={4}
+        navigation
+        
+      >
+        {
+          days.map((index) => {
+            return (
+              <SwiperSlide key={index}>
+                {<Card sx={{ display: 'flex', width: '100%' }} className='card card1' >
+                  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '1 0 auto' }}>
+                      <Typography component="div" variant="h5">
+                        Day {index}
+                      </Typography>
+                      <Typography variant="subtitle1" color="text.secondary" component="div">
+                        Time required: 35 mins
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: '151px', marginLeft: '20px' }}
+                    image={logo}
+                    alt="Live from space album cover"
+                  />
+                </Card>}
+              </SwiperSlide>
+            )
+          })
+        }
+      </Swiper>
     </div>
   );
 }
