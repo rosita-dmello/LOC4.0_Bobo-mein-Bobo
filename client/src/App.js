@@ -16,6 +16,7 @@ import OtpSignup from './pages/auth/OtpSignup';
 import UserDetails from './pages/auth/UserDetails';
 import {Box} from "@mui/material"
 import NavbarLoggedOut from "./components/NavbarLoggedOut";
+import Day from './pages/user/Day';
 
 const theme = createTheme( {
   palette: {
@@ -45,6 +46,11 @@ const theme = createTheme( {
 
 function App() {
   const token = localStorage.getItem('token')
+  const [day, setDay] = useState(0);
+
+  useEffect(() => {
+    console.log(day)
+  }, [])
   return (
     <ThemeProvider theme={theme}>
      
@@ -56,10 +62,12 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard  setDay={setDay} />}/>
           <Route path="/otpverification" element={<OtpSignup />} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/userdetails" element={<UserDetails />} />
+          <Route path="/day" element={<Day/>} />
+          
           
         </Routes>
         <Footer />
