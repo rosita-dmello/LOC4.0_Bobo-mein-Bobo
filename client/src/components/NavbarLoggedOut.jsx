@@ -12,17 +12,13 @@ export default function NavbarLoggedOut() {
     <Box >
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
-        
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { md: 'flex'}, flexGrow: 1 }}
-            color="primary.main"
-          >
-            Bobo Mein Bobo
-          </Typography>
-          
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+        <Link sx={{textDecoration: "none"}} href="/">
+         
+         <img src="/illustrations/sensai logo.png" width="30%"/>
+
+         </Link>
+          </Box>
           <Button variant="contained" onClick={() => navigate("/login")}>Login</Button>
         </Toolbar>
       </AppBar>

@@ -1,38 +1,37 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
 import Link from "@mui/material/Link";
 
 const pages = [
-    {name: "Home", route: "/home"},
-    {name: "Videos", route: "/videos"},
-    {name: "Health", route: "/health"}
+  { name: "Home", route: "/home" },
+  { name: "Videos", route: "/videos" },
+  { name: "Health", route: "/health" },
 ];
 const settings = [
-    {name: "Profile", route: "/profile"},
-    {name: "Account", route: "/account"},
-    {name: "Dashboard", route: "/dashboard"}
+  { name: "Profile", route: "/profile" },
+  { name: "Account", route: "/account" },
+  { name: "Dashboard", route: "/dashboard" },
 ];
 const navItemStyle = {
-    textDecoration: "none",
-    my: 1,
-    mx: 1.5,
-    transitionDelay: "0.1s",
-    "&:hover": {
-      color: "#f4f4f4",
-    },
-    
-  };
+  textDecoration: "none",
+  my: 1,
+  mx: 1.5,
+  transitionDelay: "0.1s",
+  "&:hover": {
+    color: "#f4f4f4",
+  },
+};
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -54,29 +53,19 @@ const Navbar = () => {
   };
 
   const logOut = () => {
-      localStorage.setItem("token", "")
-  }
+    localStorage.removeItem("token");
+  };
 
   return (
-    <AppBar
-    position="static"
-    elevation={0}
-    color="transparent">
-      <Container maxWidth="xl" >
+    <AppBar position="static" elevation={0} color="transparent">
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Link sx={{textDecoration: "none"}} href="/">
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            color="primary.main"
-          >
-            Bobo Mein Bobo
-          </Typography>
-          </Link>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }} noWrap>
+            <Link sx={{ textDecoration: "none" }} href="/">
+              <img src="/illustrations/sensai logo.png" width="32%" />
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -91,53 +80,53 @@ const Navbar = () => {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <Link sx={{textDecoration: "none"}} href={page.route} key={page.name}  color="primary.main">
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography color="primary.main" textAlign="center">{page.name}</Typography>
-                </MenuItem>
+                <Link
+                  sx={{ textDecoration: "none" }}
+                  href={page.route}
+                  key={page.name}
+                  color="primary.main"
+                >
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography color="primary.main" textAlign="center">
+                      {page.name}
+                    </Typography>
+                  </MenuItem>
                 </Link>
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            color="primary.main"
-
-          >
-           Bobo Mein Bobo
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-            
-            <Link
-              variant="button"
-              href={page.route}
-              sx={navItemStyle}
-              key={page.name}
-              onClick={handleCloseNavMenu}
-              
-            
-            >
-                {page.name}
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} noWrap>
+            <Link sx={{ textDecoration: "none" }} href="/">
+              <img src="/illustrations/sensai logo.png" width="32%" />
             </Link>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <Link
+                variant="button"
+                href={page.route}
+                sx={navItemStyle}
+                key={page.name}
+                onClick={handleCloseNavMenu}
+              >
+                {page.name}
+              </Link>
             ))}
           </Box>
 
@@ -148,34 +137,41 @@ const Navbar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                 <Link sx={{textDecoration: "none"}} href={setting.route} key={setting.name}>
-                 <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
-                   <Typography textAlign="center" color="primary.main">{setting.name}</Typography>
-                 </MenuItem>
-                 </Link>
-                 
-              ))}
-              <Link sx={{textDecoration: "none"}} href="/">
-                 <MenuItem onClick={logOut}>
-                   <Typography textAlign="center" color="primary.main">Logout</Typography>
-                 </MenuItem>
+                <Link
+                  sx={{ textDecoration: "none" }}
+                  href={setting.route}
+                  key={setting.name}
+                >
+                  <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center" color="primary.main">
+                      {setting.name}
+                    </Typography>
+                  </MenuItem>
                 </Link>
+              ))}
+              <Link sx={{ textDecoration: "none" }} href="/">
+                <MenuItem onClick={logOut}>
+                  <Typography textAlign="center" color="primary.main">
+                    Logout
+                  </Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
         </Toolbar>

@@ -21,27 +21,35 @@ const theme = createTheme( {
   palette: {
     type: 'dark',
     primary: {
-      main: '#7EC8E3',
+      main: '#8080FF',
     },
     secondary: {
       main: '#8E8E8E',
     },
-    background: {
-      default: '#050A30',
-      paper: '#212124',
-    },
     text: {
-      primary: '#F1F1F1',
+      primary: '#8080FF',
     },
   },
-});
+  typography: {
+    fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontFamily: '"Lato", "Helvetica", "Arial", sans-serif',
+    },
+    h2: {
+      fontFamily: '"Lato", "Helvetica", "Arial", sans-serif',
+    },
+    h6: {
+      fontFamily: '"Lato", "Helvetica", "Arial", sans-serif',
+    },
+  }})
 
 function App() {
+  const token = localStorage.getItem('token')
   return (
     <ThemeProvider theme={theme}>
      
       <BrowserRouter>
-        {localStorage.getItem("token") == "" ? <NavbarLoggedOut /> : <Navbar/> }
+        {token ? <Navbar/> :  <NavbarLoggedOut />}
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />

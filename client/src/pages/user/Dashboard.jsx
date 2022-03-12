@@ -14,18 +14,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 export default function Dashboard() {
   const daily = {
-    color: '#8080FF',
+    
     margin: '0.4rem'
   }
 
   const bonus = {
-    color: '#8080FF',
     margin: '0.4rem',
     marginTop:'3rem'
   }
   const days = [1, 2, 3, 4, 5]
   return (
-    <div style={{ backgroudColor: '#1c2023', padding: '2.5vw' }}>
+    <div style={{padding: '2.5vw' }}>
       <h2 style={daily}>Daily Exercises</h2>
       {/* <Card sx={{ display: 'flex' ,  width:'25%',  margin:'100px'}} className='card card1' >
        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
