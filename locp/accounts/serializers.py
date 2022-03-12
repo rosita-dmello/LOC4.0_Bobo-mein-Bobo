@@ -31,7 +31,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     # To create a new user
     def create(self, validated_data):
-        validated_data['is_active'] = False
+        validated_data['is_active'] = True
         return User.objects.create_user(**validated_data)
   
 
@@ -43,10 +43,10 @@ class LoginSerializer(serializers.ModelSerializer):
         fields = ['email','password']
 
 
-class EmailVerifySerializer(serializers.ModelSerializer):
-    otp_input=serializers.CharField(max_length=32,min_length=8,write_only = True)
+# class EmailVerifySerializer(serializers.ModelSerializer):
+#     otp_input=serializers.CharField(max_length=32,min_length=8,write_only = True)
     
-    class Meta:
-        model = User
-        fields = ['otp_input']
+#     class Meta:
+#         model = User
+#         fields = ['otp_input', 'auth_token']
  

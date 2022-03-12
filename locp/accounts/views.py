@@ -53,18 +53,20 @@ class LoginAPI(GenericAPIView):
 		return Response('Invalid Credentials',status = status.HTTP_404_NOT_FOUND)
 
 
-class EmailVerify(GenericAPIView):
-	permission_classes = [permissions.AllowAny]
-	serializer_class = EmailVerifySerializer
-	def post(self,request):
-		#token = request.GET.get('token')
-		otp = request.data.get('otp',None)
-		serializer = self.serializer_class(data=otp)
-		user = User.objects.get(otp = otp)
-		if user:
-			if not user.is_active:
-				user.is_active = True
-				user.save()
-			return Response({'message' : 'Account Verified'}, status=status.HTTP_200_OK)
+# class EmailVerify(GenericAPIView):
+# 	permission_classes = [permissions.AllowAny]
+# 	serializer_class = EmailVerifySerializer
+# 	def post(self,request):
+# 		#token = request.GET.get('token')
+# 		otp = request.data.get('otp',None)
+# 		token = request.data.get('token',None)
+# 		user = User.objects.get(auth_token = token)
+# 		serializer = self.serializer_class(data=otp)
+# 		# user = User.objects.filter(otp = otp).first()
+# 		if user.otp==otp:
+# 			if not user.is_active:
+# 				user.is_active = True
+# 				user.save()
+# 			return Response({'message' : 'Account Verified'}, status=status.HTTP_200_OK)
 
-		return Response('OTP invalid',status = status.HTTP_404_NOT_FOUND)
+# 		return Response('OTP invalid',status = status.HTTP_404_NOT_FOUND)
