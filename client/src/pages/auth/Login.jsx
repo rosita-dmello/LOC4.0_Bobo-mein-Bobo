@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import {loginPost} from "../data/api";
 import { useContext, useState } from 'react';
-
+import AnimatedPage from '../../components/AnimatedPage';
 import { Navigate, useNavigate } from "react-router-dom";
 
 
@@ -48,11 +48,12 @@ export default function Login() {
     
      };
      
-  return (<Box>
+  return (<AnimatedPage>
+  <Box>
   <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
        
-        <Grid item sm={12} md={5} component={Paper} elevation={2} square>
+        <Grid item sm={12} md={5} component={Paper} elevation={0} square>
           <Box
             sx={{
               my: 8,
@@ -132,5 +133,6 @@ export default function Login() {
       </Grid>
       
       </Box>
+      </AnimatedPage>
   );
 }

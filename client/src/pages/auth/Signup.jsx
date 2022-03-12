@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MuiPhoneNumber from "material-ui-phone-number";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import AnimatedPage from '../../components/AnimatedPage';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -46,10 +46,11 @@ export default function Signup() {
   };
 
   return (
+    <AnimatedPage>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={4} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
           <Box
             sx={{
               my: 8,
@@ -165,6 +166,6 @@ export default function Signup() {
           }}
         />
       </Grid>
-    
+      </AnimatedPage>
   );
 }
