@@ -29,7 +29,7 @@ export default function UserDetails() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-
+    localStorage.setItem("token", "abcdef");
     console.log("Log in");
 
     // const response = await loginPost({

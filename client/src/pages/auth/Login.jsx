@@ -39,6 +39,7 @@ export default function Login() {
      
       // localStorage.setItem("user", JSON.stringify(response.data.user));
       // localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", "abcdef");
       navigate("/dashboard", {replace: true});
       
       // console.log(response.data.user);

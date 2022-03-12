@@ -15,20 +15,24 @@ import MyProfile from "./pages/user/MyProfile";
 import OtpSignup from './pages/auth/OtpSignup';
 import UserDetails from './pages/auth/UserDetails';
 import {Box} from "@mui/material"
+import NavbarLoggedOut from "./components/NavbarLoggedOut";
 
-
-const theme = createTheme({
+const theme = createTheme( {
   palette: {
     type: 'dark',
     primary: {
-      main: '#1c2023',
+      main: '#7EC8E3',
     },
     secondary: {
-      main: '#8080FF',
+      main: '#8E8E8E',
     },
-    text:{
-      main: '#8080FF'
-    }
+    background: {
+      default: '#050A30',
+      paper: '#212124',
+    },
+    text: {
+      primary: '#F1F1F1',
+    },
   },
 });
 
@@ -37,7 +41,7 @@ function App() {
     <ThemeProvider theme={theme}>
      
       <BrowserRouter>
-        <Navbar />
+        {localStorage.getItem("token") == "" ? <NavbarLoggedOut /> : <Navbar/> }
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />

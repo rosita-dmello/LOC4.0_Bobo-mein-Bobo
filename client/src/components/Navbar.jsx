@@ -31,7 +31,7 @@ const navItemStyle = {
     "&:hover": {
       color: "#f4f4f4",
     },
-    color: "#fff"
+    
   };
 
 const Navbar = () => {
@@ -60,15 +60,17 @@ const Navbar = () => {
   return (
     <AppBar
     position="static"
-    elevation={1}>
-      <Container maxWidth="xl">
+    elevation={0}
+    color="transparent">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
-        <Link sx={{textDecoration: "none", color: "#fff"}} href="/">
+        <Link sx={{textDecoration: "none"}} href="/">
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            color="primary.main"
           >
             Bobo Mein Bobo
           </Typography>
@@ -104,9 +106,9 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <Link sx={{textDecoration: "none"}} href={page.route} key={page.name} >
+                <Link sx={{textDecoration: "none"}} href={page.route} key={page.name}  color="primary.main">
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography style={{color:'#8080FF'}} textAlign="center">{page.name}</Typography>
+                  <Typography color="primary.main" textAlign="center">{page.name}</Typography>
                 </MenuItem>
                 </Link>
               ))}
@@ -117,6 +119,8 @@ const Navbar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            color="primary.main"
+
           >
            Bobo Mein Bobo
           </Typography>
@@ -129,6 +133,7 @@ const Navbar = () => {
               sx={navItemStyle}
               key={page.name}
               onClick={handleCloseNavMenu}
+              
             
             >
                 {page.name}
@@ -161,14 +166,14 @@ const Navbar = () => {
               {settings.map((setting) => (
                  <Link sx={{textDecoration: "none"}} href={setting.route} key={setting.name}>
                  <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
-                   <Typography textAlign="center">{setting.name}</Typography>
+                   <Typography textAlign="center" color="primary.main">{setting.name}</Typography>
                  </MenuItem>
                  </Link>
                  
               ))}
               <Link sx={{textDecoration: "none"}} href="/">
                  <MenuItem onClick={logOut}>
-                   <Typography textAlign="center">Logout</Typography>
+                   <Typography textAlign="center" color="primary.main">Logout</Typography>
                  </MenuItem>
                 </Link>
             </Menu>
