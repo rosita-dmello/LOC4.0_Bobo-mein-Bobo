@@ -104,9 +104,9 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <Link sx={{textDecoration: "none"}} href={page.route}>
+                <Link sx={{textDecoration: "none"}} href={page.route} key={page.name} >
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
+                  <Typography style={{color:'#8080FF'}} textAlign="center">{page.name}</Typography>
                 </MenuItem>
                 </Link>
               ))}
@@ -159,7 +159,7 @@ const Navbar = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                 <Link sx={{textDecoration: "none"}} href={setting.route}>
+                 <Link sx={{textDecoration: "none"}} href={setting.route} key={setting.name}>
                  <MenuItem key={setting.name} onClick={handleCloseUserMenu}>
                    <Typography textAlign="center">{setting.name}</Typography>
                  </MenuItem>
