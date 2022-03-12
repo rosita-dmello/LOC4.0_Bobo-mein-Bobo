@@ -17,7 +17,7 @@ import UserDetails from './pages/auth/UserDetails';
 import {Box} from "@mui/material"
 import NavbarLoggedOut from "./components/NavbarLoggedOut";
 import Day from './pages/user/Day';
-
+import Videos from "./pages/Videos";
 const theme = createTheme( {
   palette: {
     type: 'dark',
@@ -67,6 +67,7 @@ function App() {
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/userdetails" element={<UserDetails />} />
           <Route path="/day" element={<Day/>} />
+          <Route path="/videos" element={<Videos/>} />
           
           
         </Routes>

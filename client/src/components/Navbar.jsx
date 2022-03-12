@@ -32,7 +32,7 @@ const navItemStyle = {
   mx: 1.5,
   transitionDelay: "0.1s",
   "&:hover": {
-    color: "#c7c7ff",
+    color: "#9191ff",
   },
 };
 
