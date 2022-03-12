@@ -20,9 +20,8 @@ class UserRegisterAPI(GenericAPIView):
 	def post(self,request,*args,**kwargs):
 		data = request.data
 		otp = random.randint(100000, 999999)
-		data._mutable = True
-		request.data.update({'otp':otp})
-		data._mutable = False
+		data = data.copy()
+		data.update({'otp':otp})
 		serializer = self.serializer_class(data=data)
 		serializer.is_valid(raise_exception = True)
 		user = serializer.save()
