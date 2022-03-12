@@ -13,11 +13,9 @@ export default function NavbarLoggedOut() {
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-        <Link sx={{textDecoration: "none"}} href="/">
          
-         <img src="/illustrations/sensai logo.png" width="30%"/>
+         <img src="/illustrations/sensai logo.png" width="100px"/>
 
-         </Link>
           </Box>
           <Button variant="contained" onClick={() => navigate("/login")}>Login</Button>
         </Toolbar>

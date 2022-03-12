@@ -60,12 +60,13 @@ const Navbar = () => {
     <AppBar position="static" elevation={0} color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+      
           <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }} noWrap>
-            <Link sx={{ textDecoration: "none" }} href="/">
+           
               <img src="/illustrations/sensai logo.png" width="32%" />
-            </Link>
+            
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{  display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -110,13 +111,14 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} noWrap>
-            <Link sx={{ textDecoration: "none" }} href="/">
+     
+          <Box sx={{ display: { xs: "flex", md: "none" } }} noWrap>
+           
               <img src="/illustrations/sensai logo.png" width="32%" />
-            </Link>
+            
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{  display: { xs: "none", md: "flex" }, flexGrow: 1 }}>
             {pages.map((page) => (
               <Link
                 variant="button"
