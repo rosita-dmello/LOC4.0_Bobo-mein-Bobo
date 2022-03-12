@@ -1,7 +1,3 @@
-!pip install opencv-python
-!apt update && apt install -y libsm6 libxext6
-!apt-get install -y libxrender-dev
-
 import streamlit as st
 import mediapipe as mp
 import cv2
