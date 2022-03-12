@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MuiPhoneNumber from "material-ui-phone-number";
 import { Navigate, useNavigate } from "react-router-dom";
 import AnimatedPage from '../../components/AnimatedPage';
+import { signupPost } from '../../data/api';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -28,15 +29,17 @@ export default function Signup() {
     phone = phone.substring(3);
 
     try {
-      // const response = await signupPost({
-      //   email: data.get('email'),
-      //   password: data.get('password'),
-      //   phone,
-      //   name: data.get('firstName') + " " + data.get('lastName'),
+      const response = await signupPost({
+        email: data.get('email'),
+        password: data.get('password'),
+        confirm_password: data.get('cfpassword'),
+        phone_no: phone,
+        name: data.get('firstName') + " " + data.get('lastName'),
   
-      // });
-      console.log("Clicked")
-      
+      });
+   
+      console.log(response)
+      localStorage.setItem("token", response);
       navigate("/otpverification", {replace: true});
     }
     catch(err) {
@@ -121,6 +124,17 @@ export default function Signup() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="cfpassword"
+                  label="Confirm Password"
+                  type="password"
+                  id="cfpassword"
+                  autoComplete="confirm-password"
                 />
               </Grid>
 

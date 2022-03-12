@@ -12,11 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "@mui/material/Link";
+import { useNavigate } from "react-router-dom";
 
 const pages = [
   { name: "Home", route: "/home" },
   { name: "Videos", route: "/videos" },
   { name: "Health", route: "/health" },
+  { name: "Dashboard", route: "/dashboard" }
 ];
 const settings = [
   { name: "Profile", route: "/profile" },
@@ -25,17 +27,19 @@ const settings = [
 ];
 const navItemStyle = {
   textDecoration: "none",
+
   my: 1,
   mx: 1.5,
   transitionDelay: "0.1s",
   "&:hover": {
-    color: "#f4f4f4",
+    color: "#c7c7ff",
   },
 };
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -61,10 +65,8 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
       
-          <Box sx={{ mr: 2, display: { xs: "none", md: "flex" } }} noWrap>
-           
-              <img src="/illustrations/sensai logo.png" width="32%" />
-            
+          <Box sx={{ mr: 2, display: { xs: "none", md: "flex"}, flexGrow: 1, cursor: "pointer"}} onClick={() => navigate("/")} noWrap>
+              <img src="/illustrations/sensai logo.png"  width="125px" />
           </Box>
           <Box sx={{  display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -92,9 +94,11 @@ const Navbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "block", md: "none" }
+                
               }}
             >
+             
               {pages.map((page) => (
                 <Link
                   sx={{ textDecoration: "none" }}
@@ -109,16 +113,17 @@ const Navbar = () => {
                   </MenuItem>
                 </Link>
               ))}
+             
             </Menu>
           </Box>
      
-          <Box sx={{ display: { xs: "flex", md: "none" } }} noWrap>
+          <Box sx={{ display: { xs: "flex", md: "none" } }} noWrap onClick={() => navigate("/")}>
            
               <img src="/illustrations/sensai logo.png" width="32%" />
             
           </Box>
 
-          <Box sx={{  display: { xs: "none", md: "flex" }, flexGrow: 1 }}>
+          <Box sx={{  display: { xs: "none", md: "flex" }, mr: 3}}>
             {pages.map((page) => (
               <Link
                 variant="button"
@@ -132,7 +137,7 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0}}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />

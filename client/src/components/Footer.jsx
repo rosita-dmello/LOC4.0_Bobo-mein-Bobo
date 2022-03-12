@@ -9,7 +9,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://google.com/">
+      <Link href="https://google.com/">
         Bobo Mein Bobo
       </Link>{' '}
       {new Date().getFullYear()}
@@ -24,7 +24,9 @@ export default function Footer() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
+
         
+        alignText: "center"
       }}
     >
     
@@ -32,12 +34,10 @@ export default function Footer() {
         component="footer"
         sx={{
           py: 3,
-          px: 2,
           mt: 'auto',
           backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+           theme.palette.grey[200]
+             
         }}
       >
         <Container maxWidth="sm">

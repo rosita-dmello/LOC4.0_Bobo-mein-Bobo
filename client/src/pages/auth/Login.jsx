@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import {loginPost} from "../data/api";
+import {loginPost} from "../../data/api"
 import { useContext, useState } from 'react';
 import AnimatedPage from '../../components/AnimatedPage';
 import { Navigate, useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [navUser, setNavUser] = useState({});
+  
   
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,17 +32,17 @@ export default function Login() {
     
       console.log("Log in");
     
-      // const response = await loginPost({
-      //   email: data.get('email'),
-      //   password: data.get('password'),
-      // });
-     
-      // localStorage.setItem("user", JSON.stringify(response.data.user));
-      // localStorage.setItem("token", response.data.token);
-      localStorage.setItem("token", "abcdef");
+      const response = await loginPost({
+        email: data.get('email'),
+        password: data.get('password'),
+      });
+      console.log(response);
+      
+      localStorage.setItem("token", response);
+      // localStorage.setItem("token", "abcdef");
       navigate("/dashboard", {replace: true});
       
-      // console.log(response.data.user);
+     
       
   
    

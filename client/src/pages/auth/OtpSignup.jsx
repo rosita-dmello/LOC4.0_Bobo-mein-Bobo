@@ -35,7 +35,7 @@ export default function OtpSignup() {
     // }, token);
     // setIsLoggedIn(true);
     // localStorage.setItem("user", JSON.stringify(response.data.user));
-    localStorage.setItem("token", "abcdef");
+   
     // setCurrentUser(response.data.token, response.data.user);
     navigate("/userdetails", {replace: true});
    
