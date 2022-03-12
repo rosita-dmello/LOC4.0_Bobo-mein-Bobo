@@ -19,22 +19,13 @@ import {Box} from "@mui/material"
 
 const theme = createTheme({
   palette: {
-    type: "light",
+    type: 'dark',
     primary: {
-      main: "#ad1457",
+      main: '#1c2023',
     },
     secondary: {
-      main: "#ffea00",
+      main: '#8080FF',
     },
-  },
-  typography: {
-    fontFamily: "DM Sans, sans-serif",
-    fontWeightRegular: 400,
-    fontWeightBold: 700,
-    // h1: {
-    //   fontFamily: "Fredoka, sans-serif"
-    // }
-   
   },
 });
 
