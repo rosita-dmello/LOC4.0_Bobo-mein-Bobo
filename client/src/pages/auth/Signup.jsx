@@ -139,7 +139,7 @@ export default function Signup() {
               Sign Up
             </Button>
 
-            <Grid container justifyContent="flex-end">
+            <Grid container justifyContent="center">
               <Grid item>
                 <Link href="/login" variant="body2" color="secondary">
                   Already have an account? Sign in
@@ -153,14 +153,14 @@ export default function Signup() {
         <Grid
           item
           xs={false}
-          sm={4}
+          
           md={7}
           sx={{
-            backgroundImage: 'url("/illustrations/signup.svg")',
+            backgroundImage: 'url("/illustrations/sign_up.svg")',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
+            // backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />

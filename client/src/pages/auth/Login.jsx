@@ -123,9 +123,9 @@ export default function Login() {
           sm={false}
           md={7}
           sx={{
-            backgroundImage: 'url(/illustrations/signin.svg)',
+            backgroundImage: 'url(/illustrations/sign_in.svg)',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'auto',
+            // backgroundSize: 'auto',
             backgroundPosition: 'center',
           }}
         />

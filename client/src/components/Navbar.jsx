@@ -14,9 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Link from "@mui/material/Link";
 
 const pages = [
-    {name: "Products", route: "/products"},
-    {name: "Pricing", route: "/pricing"},
-    {name: "Home", route: "/home"}
+    {name: "Home", route: "/home"},
+    {name: "Videos", route: "/videos"},
+    {name: "Health", route: "/health"}
 ];
 const settings = [
     {name: "Profile", route: "/profile"},
