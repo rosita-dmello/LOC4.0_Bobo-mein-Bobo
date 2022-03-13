@@ -15,11 +15,10 @@ import Link from "@mui/material/Link";
 import { useNavigate } from "react-router-dom";
 
 const pages = [
-  { name: "Home", route: "/home" },
   { name: "Videos", route: "/videos" },
-  { name: "Health", route: "/health" },
-  { name: "Dashboard", route: "/dashboard" },
-  { name: "Diet Plan", route: "/diet" }
+  { name: "Health", route: "/diet" },
+  { name: "Dashboard", route: "/dashboard" }
+  
 ];
 const settings = [
   { name: "Profile", route: "/profile" },

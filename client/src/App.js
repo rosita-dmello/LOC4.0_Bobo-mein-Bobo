@@ -64,7 +64,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/dashboard" element={<Dashboard  setDay={setDay} />}/>
           <Route path="/otpverification" element={<OtpSignup />} />
-          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/profile" element={<MyProfile />} />
           <Route path="/userdetails" element={<UserDetails />} />
           <Route path="/day" element={<Day/>} />
           <Route path="/videos" element={<Videos/>} />
