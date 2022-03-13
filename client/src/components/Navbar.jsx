@@ -18,7 +18,8 @@ const pages = [
   { name: "Home", route: "/home" },
   { name: "Videos", route: "/videos" },
   { name: "Health", route: "/health" },
-  { name: "Dashboard", route: "/dashboard" }
+  { name: "Dashboard", route: "/dashboard" },
+  { name: "Diet Plan", route: "/diet" }
 ];
 const settings = [
   { name: "Profile", route: "/profile" },
