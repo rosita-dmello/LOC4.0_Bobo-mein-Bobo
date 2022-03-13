@@ -58,7 +58,7 @@ function App() {
         {token ? <Navbar/> :  <NavbarLoggedOut />}
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
