@@ -43,6 +43,11 @@ class LoginSerializer(serializers.ModelSerializer):
         fields = ['email','password']
 
 
+class UserPatchSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ['name', 'email', 'phone_no', 'height', 'weight', 'dob', 'bmi']
 # class EmailVerifySerializer(serializers.ModelSerializer):
 #     otp_input=serializers.CharField(max_length=32,min_length=8,write_only = True)
     
