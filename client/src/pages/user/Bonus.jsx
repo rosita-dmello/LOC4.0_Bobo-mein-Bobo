@@ -13,7 +13,7 @@ import { width } from '@mui/system';
 
 
 
-function Day() {
+function Bonus() {
 
   const { speak } = useSpeechSynthesis();
   const handleEnd = () => {
@@ -60,7 +60,7 @@ function Day() {
           <Card className='card1' sx={{ marginTop: '5vh', marginBottom: '7.8vh' ,width:'50%', display:'flex', alignItems:'center',justifyContent:'center' }}>
             <CardContent>
               <Typography gutterBottom variant="h3" component="div">
-                Exercise 1
+                Bonus Exercise 1
               </Typography>
               <Grid container sx={{ display: 'flex' }}>
                 <Grid item >
@@ -79,7 +79,7 @@ function Day() {
                   <Button sx={{ color: 'black' }} onClick={() => speak({ text: value, rate: '0.53', onEnd: handleEnd(), speaking: handleSpeak() })}><VolumeUp /></Button>
                 </Grid>
               </Grid>
-              <Iframe url="http://192.168.43.93:8501"
+              <Iframe url="http://192.168.43.93:8503"
                 width="450px"
                 height="450px"
                 id="myId"
@@ -94,7 +94,7 @@ function Day() {
           <Card className='card1' sx={{ marginTop: '5vh', marginBottom: '7.8vh' ,width:'50%', display:'flex', alignItems:'center',justifyContent:'center'}}>
             <CardContent>
               <Typography gutterBottom variant="h3" component="div">
-                Exercise 2
+                Bonus Exercise 2
               </Typography>
               <Grid container sx={{ display: 'flex' }}>
                 <Grid item >
@@ -133,4 +133,4 @@ function Day() {
   )
 }
 
-export default Day
+export default Bonus

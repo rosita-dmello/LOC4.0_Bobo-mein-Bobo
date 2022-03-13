@@ -121,6 +121,7 @@ export default function Dashboard(props) {
           days.map((index) => {
             return (
               <SwiperSlide key={index}>
+                <Link to={'/bonus'} state={{ data: data, index: index  }} style={{textDecoration:'none'}}>
                 {<Card sx={{ display: 'flex', width: '100%' }} className='card card1' >
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '1 0 auto' }}>
@@ -139,6 +140,7 @@ export default function Dashboard(props) {
                     alt="Live from space album cover"
                   />
                 </Card>}
+                </Link>
               </SwiperSlide>
             )
           })
