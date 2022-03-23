@@ -13,3 +13,6 @@ Using the device's camera and Machine learning, we count the number of reps and 
 ![Screenshot (13)](https://user-images.githubusercontent.com/66885378/159727136-3d7fb571-7021-4615-b719-b7a11d3017a0.png)
 ![Screenshot (14)](https://user-images.githubusercontent.com/66885378/159727133-60df366c-4809-4c50-adcb-1dc47546fa5c.png)
 ![Screenshot (12)](https://user-images.githubusercontent.com/66885378/159727137-c403ab25-37b3-4ae8-825a-51a2ecaaf1ab.png)
+![Screenshot (15)](https://user-images.githubusercontent.com/66885378/159729303-2b8d2281-deb1-4095-a087-67b687cc1e8e.png)
+![Screenshot (18)](https://user-images.githubusercontent.com/66885378/159729383-9c2dffbb-ef89-4cfd-9763-69f2073b45d0.png)
+![Screenshot (17)](https://user-images.githubusercontent.com/66885378/159729396-5c24a618-bef6-4990-bb1c-f335a5412f2f.png)
